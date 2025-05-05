@@ -5,11 +5,14 @@ import re
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 
+import os
+nltk.data.path.append(os.path.join(os.getcwd(), 'nltk_data'))
+
 # Download NLTK data
-nltk.download('punkt')
-nltk.download('stopwords')
-nltk.download('wordnet')
-nltk.download('omw-1.4')
+# nltk.download('punkt')
+# nltk.download('stopwords')
+# nltk.download('wordnet')
+# nltk.download('omw-1.4')
 
 lemmatizer = WordNetLemmatizer()
 stop_words = set(stopwords.words('english'))
