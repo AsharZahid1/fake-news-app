@@ -25,7 +25,8 @@ vectorizer = joblib.load("tfidf_vectorizer.pkl")
 def preprocess(text):
     text = re.sub(r'\W', ' ', text)
     text = text.lower()
-    words = nltk.word_tokenize(text)
+    words = text.split()
+
     words = [lemmatizer.lemmatize(word) for word in words if word not in stop_words and word.isalpha()]
     return ' '.join(words)
 
